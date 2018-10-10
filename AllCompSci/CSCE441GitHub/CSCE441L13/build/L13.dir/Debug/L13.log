@@ -1,0 +1,39 @@
+﻿  main.cpp
+H:\CSCE441L13\src\main.cpp(75): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+H:\CSCE441L13\src\main.cpp(80): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+H:\CSCE441L13\src\main.cpp(118): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+H:\CSCE441L13\src\main.cpp(119): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+H:\CSCE441L13\src\main.cpp(132): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+H:\CSCE441L13\src\main.cpp(133): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+H:\CSCE441L13\src\main.cpp(214): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+H:\CSCE441L13\src\main.cpp(223): warning C4018: '<': signed/unsigned mismatch
+H:\CSCE441L13\src\main.cpp(315): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\c++\glm\glm\detail\type_vec4.inl(412): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  c:\c++\glm\glm\detail\type_mat4x4.inl(330): note: see reference to function template instantiation 'glm::tvec4<float,0> &glm::tvec4<float,0>::operator *=<U>(U)' being compiled
+          with
+          [
+              U=double
+          ]
+  c:\c++\glm\glm\detail\type_mat4x4.inl(330): note: see reference to function template instantiation 'glm::tvec4<float,0> &glm::tvec4<float,0>::operator *=<U>(U)' being compiled
+          with
+          [
+              U=double
+          ]
+  H:\CSCE441L13\src\main.cpp(168): note: see reference to function template instantiation 'glm::tmat4x4<float,0> &glm::tmat4x4<float,0>::operator *=<double>(U)' being compiled
+          with
+          [
+              U=double
+          ]
+  H:\CSCE441L13\src\main.cpp(168): note: see reference to function template instantiation 'glm::tmat4x4<float,0> &glm::tmat4x4<float,0>::operator *=<double>(U)' being compiled
+          with
+          [
+              U=double
+          ]
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\memory(439): note: see reference to class template instantiation 'std::_Ptr_base<_Ty>' being compiled
+          with
+          [
+              _Ty=Program
+          ]
+  H:\CSCE441L13\src\main.cpp(25): note: see reference to class template instantiation 'std::shared_ptr<Program>' being compiled
+  L13.vcxproj -> H:\CSCE441L13\build\Debug\L13.exe
+  L13.vcxproj -> H:/CSCE441L13/build/Debug/L13.pdb (Full PDB)

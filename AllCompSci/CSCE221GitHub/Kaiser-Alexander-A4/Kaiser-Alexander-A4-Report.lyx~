@@ -1,0 +1,1284 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "helvet" "default"
+\font_typewriter "courier" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.5cm
+\topmargin 2.5cm
+\rightmargin 2.5cm
+\bottommargin 2.5cm
+\headheight 0cm
+\headsep 0cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+The Programming Assignment Report Instructions
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+CSCE 221
+\end_layout
+
+\begin_layout Enumerate
+The description of an assignment problem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The purpose of this assignment was to create a binary search tree that could
+ handle linear, perfect and random values and display the search cost for
+ each number inserted.
+ This was to be accomplished using vectors, pointers or queues.
+ All trees with values lower than $2^4$ was to output a printed tree with
+ an 'X' character in place of an empty node.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+The description of data structures and algorithms used to solve the problem.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Provide definitions of data structures by using Abstract Data Types (ADTs)
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void MakeNode//Pushes the first element into the binary search tree vector.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void setleft//Places the element into the corresponding vector space that
+ is left of the last element.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void setright//Places the element into the corresponding vector space that
+ is right of the last element.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void Insert//Inserts the next element into its proper location in the vector.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void Print//Prints out the key, search cost, total number of nodes, and
+ average search cost.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void PrintTree//Prints out a physical tree with the character 'X' in place
+ of blank nodes.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void Remove//Asks the user for the key of the node that they would like
+ to remove and reprints the information and tree of the new tree with the
+ node removed.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Write about the ADTs implementation in C++.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void MakeNode//Places the first element into location zero of v1 and a searchcos
+t of 1 into location zero of v2.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void setleft//Uses the algorithm 2*index + 1 to place the element in that
+ specific location of the vector, it also changes the highest index if the
+ current index is larger than the highestindex and sets the height of the
+ left side of the tree using the algorithm int((log(currIndex + 1)/log(2))
+ + 1).
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void setright//Uses the algorithm 2*index + 2 to place the element in that
+ specific location of the vector, it also changes the highest index if the
+ current index is larger than the highestindex and sets the height of the
+ right side of the tree using the algorithm int((log(currIndex + 1)/log(2))
+ + 1).
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void Insert//Uses if statements to check to see if the current element is
+ higher or lower than the last element scanned on either the right or left
+ side of the tree and uses the functions setright and setleft accordingly.
+ The function also sets all the search costs for the empty nodes using a
+ for loop at the end of the function.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void Print//Prints out the keys and search costs in v1 and v2 using a for
+ loop, and skips over any blank nodes using if statements.
+ Everytime the element in v1 is not equal to zero, one is added to the sum
+ of the total nodes and the according search cost is added to the total
+ search cost.
+ The total search cost is divided by the sum of the nodes and both values
+ are printed in the console.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void PrintTree//Uses a doubly nested for loop to scan through v1 and v2
+ to print out an 'X' when v1 is equal to zero and prints the key when v1
+ is not equal to zero.
+ everytime the search cost changes, a new line is started.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void Remove//Asks the user for the key of the node that they would like
+ to remove and reparses through the file, skipping over that number to create
+ a new tree that does not include the given number, placing the new tree
+ in two new vectors and setting them equal to v1 and v2 after parsing through
+ the file.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Describe algorithms used to solve the problem.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+There are three main algorithms in this assignment, finding the individual
+ search cost, average search cost and finding the updated search cost.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Individual Search Cost-The formula int((log(currIndex + 1)/log(2)) + 1)
+ calculates the "height" of the left or right side of the tree that the
+ element is being inserted in.
+ This formula is derived from the max amount of nodes that can be on each
+ row exponentially increasing by two.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Average Search Cost-To find the average search cost, the vector is put into
+ a loop and the search cost for all non-empty locations in the vector are
+ summed up and divided by the total number of nodes.
+ The loop is as follows.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+for (int i = 0; i <= highestindex; i++){
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		if(v1[i] != 0) 	
+\backslash
+
+\backslash
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+		sum = sum + v2[i];//Sum up all the search costs of the non-blank nodes
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+double average = sum / size;
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Updated Search Cost-The updated search cost is calculated by using the same
+ algorithms for the individual and average search costs.
+ The search cost is "updated" since the updated binary seach tree does not
+ contain the "removed" key.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+All of the search costs are based on the insert function.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Analyze the algorithms according to assignment requirements.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The time complexity of the search costs are as follows.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Individual Search Cost-O(1) since the calculation does not contain any loops.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Average Search Cost-O(n) since the calculation is contained within one loop.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Updated Search Cost-O(n) since the calculatino is contained within one loop.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Perfect Binary Search Tree-O(logn)
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Linear Binary Search Tree-O(n)
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+A C++ organization and implementation of the problem solution 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Provide a list and description of classes or interfaces used by a program
+ such as classes used to implement the data structures or exceptions.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The program was made using two separate STD vectors that corresponded to
+ the location of the key and the location of the specific search cost.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Include in the report the class declarations from a header file (.h) and
+ their implementation from a source file (.cpp).
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+On top of using the STD vector class, the math.h header file was included
+ in the program to use logs in order to calculate the correct indexes correspond
+ing to hwo the binary search tree was formulated.
+ The fstream was included as well in order to parse through the files given
+ to us via the student web page.
+ The files gave us the numbers in a specific order to create perfect, linear
+ and random binary trees.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Provide features of the C++ programming paradigms like Inheritance or Polymorphi
+sm in case of object oriented programming, or Templates in the case of generic
+ programming used in your implementation.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The two main paradigms used in the assignment are templates and polymorphism
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Polymorphism-Since vectors are able to hold different forms of data, it
+ is inferred that polymorphism is applicable to the code since the vector
+ class morphs to the data type the vector or list is initialized with.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Templates-Furthermore, it is inferred that templating will be used when
+ using vectors.
+ Vectors must be initialized with a type, and since the numbers for the
+ keys do not get relatively large in the assignment, the vector was initialized
+ with the int type.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+A user guide description how to navigate your program with the instructions
+ how to: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+compile the program: specify the directory and file names, etc.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In order to compile the program, simply change the directory to "Kaiser-Alexande
+r-A4" and compile the file "main.cpp" using the command g++ main.cpp.
+ Make sure that the files of numbers for the binary search tree are in the
+ same directory as the compliation.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+run the program: specify the name of an executable file.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+After compiling using g++, run the program by using the command ./a.out.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Specifications and description of input and output formats and files 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+The type of files: keyboard, text files, etc (if applicable).
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The program inputs data from a given file within the same directory that
+ contains the organized data to print a perfect, random or linear binary
+ search tree using getline and outputs the data onto the console in PuTTY.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+A file input format: when a program requires a sequence of input items,
+ specify the number of items per line or a line termination.
+ Provide a sample of a required input format.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The file input uses getline to parse through a given file to create a binary
+ search tree based on the order that the numbers are received.
+ There is one number per line and the getline function runs through the
+ complete file until it runs into a 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Discuss possible cases when your program could crash because of incorrect
+ input (a wrong file name, strings instead of a number, or such cases when
+ the program expects 10 items to read and it finds only 9.)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+There are many instances that could crash the program.
+ For a wrong file name, the program would simply exit if the file name given
+ is not listed in the same directory as the file.
+ However, the problem comes when outputting the linear trees.
+ Due to the limitation with vector sizes, any number past 27 will cause
+ the program to segment fault specifically for linear trees.
+ This is due to the fact that the assignment files contain right sided linear
+ trees rather than left.
+ The empty nodes grow exponentially with each increase in search cost to
+ where the STD vector simply cannot be initialized with a value big enough
+ to hold a linear tree of this type.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Provide types of exceptions and their purpose in your program.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+logical exceptions (such as deletion of an item from an empty container,
+ etc.).
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In order to eliminate logical exceptions in the program, if statements are
+ used to ensure that the data is being handled responsibly.
+ For example, if the file that is listed is not within the same directory
+ as a program, "No file" will be output and the program will exit.
+ However, the issue listed in problem 5c is unavoidable for all linear trees
+ past $2^4$.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+runtime exception (such as division by 
+\begin_inset Formula $0$
+\end_inset
+
+, etc.)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+To prevent runtime exception, a try-catch loop was implemented in the main
+ function.
+ When a runtime exception is encountered (such as a segmentation fault)
+ the program is terminated completely and a reason is given as to why the
+ termination occurred.
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Test your program for correctness using valid, invalid, and random inputs
+ (e.g., insertion of an item at the beginning, at the end, or at a random
+ place into a sorted vector).
+ Include evidence of your testing, such as an output file or screen shots
+ with an input and the corresponding output.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The first section of testing includes the given graphs and tables that are
+ required by the report instructions
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted1.png
+	width 6.5in
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted2.png
+	width 6.5in
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted3.png
+	width 6.5in
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted4.png
+	width 6.5in
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The data in the graphs supports the big-o notation given in problem 2d.
+ The perfect binary tree has a significantly smaller search cost than the
+ linear binary tree.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

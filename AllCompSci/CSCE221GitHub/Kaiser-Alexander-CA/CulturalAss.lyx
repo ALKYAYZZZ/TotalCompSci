@@ -1,0 +1,165 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 10
+\spacing double
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\topmargin 0.5in
+\bottommargin 1in
+\headsep 0.5in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Author
+\paragraph_spacing double
+Alexander Kaiser
+\begin_inset Newline newline
+\end_inset
+
+CSCE-221-501
+\end_layout
+
+\begin_layout Title
+\paragraph_spacing double
+Multiple 3D RNA Structure Superposition Using Neighbor Joining
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+As opposed to double stranded DNA, RNA is a single stranded form of matter
+ that is free to form with other RNA strings within the same vacinity.
+ RNA are compared to one another by their stems, loops and necks.
+ The RNA can be aligned using an algorithmic function called SETTER, which
+ uses generalized secondary structure units in order to match these three
+ properties in order to find two non-overlapping 3D RNA strands that are
+ most alike.
+ The SETTER program is a series of else if statements that starts with comparing
+ the two RNA strands' position of nucleotides, it's neighboring nucleotide
+ type and the strands' raw length.
+ The algorithm returns a value called an 
+\shape italic
+S-score, 
+\shape default
+which is a measurement of the superposition of two RNA structures.
+ The lower the 
+\shape italic
+S-score 
+\shape default
+the higher the superposition of two RNA structures.
+ Recently, a program by the name of MultiSETTER has become a more effective
+ alternative to the original SETTER program.
+ The MultiSETTER program uses an algorithm orignially used for the multialignmen
+t of protiens called ClustalW.
+ This algorithm creates a dendrogram, or guide tree, for the neighboring
+ RNA molecules to align with one another until the most identical structures
+ are matched, very much like an else if statement used in programming.
+ This new advancement in RNA matching has increased the capability of matching
+ long structures significantly as well as decreased runtime of SETTER by
+ around seventy-five percent.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+This advancement in genetic matching impacts society and the economy in
+ a plethora of ways.
+ As for both categories, the decrease in runtime that comes from the multi-core
+ processing power of MultiSETTER eliminates downtime that can be used for
+ other research purposes.
+ The improved matching ability MultiSETTER brings to the field of genetics
+ will also allow for many new discoveries that would not be possible if
+ it not were for the precision that the new program displays.
+ Examples of these discoveries include knowledge of the human species as
+ a whole, increased research in genomic medicines and prevention and research
+ of genetic disorders.
+ Finally, since MultiSETTER is a compilation of C++ source code it can be
+ seen that the functionality as well as the uses for C++ are rapidly increasing
+ day after day.
+ The ever increasing list of uses for C++ expands with every new idea that
+ is brought to the table.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "Source 1"
+
+\end_inset
+
+Hoksza, David, and Daniel Svozil.
+ "Multiple 3D RNA Structure Superposition Using Neighbor Joining." IEEE/ACM
+ Trans.
+ Comput.
+ Biol.
+ and Bioinf.
+ IEEE/ACM Transactions on Computational Biology and Bioinformatics 12.3 (2015):
+ 520-30.
+ Web.
+ 
+\end_layout
+
+\end_body
+\end_document

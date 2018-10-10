@@ -1,0 +1,1 @@
+Use g++ IndividualAssignment.cpp to compile and ./a.out to run.

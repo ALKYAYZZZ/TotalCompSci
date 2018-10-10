@@ -1,0 +1,9 @@
+
+========= TINY SNS CLIENT =========
+ Command Lists and Format:
+ FOLLOW <username>
+ UNFOLLOW <username>
+ LIST
+ TIMELINE
+=====================================
+Cmd> 

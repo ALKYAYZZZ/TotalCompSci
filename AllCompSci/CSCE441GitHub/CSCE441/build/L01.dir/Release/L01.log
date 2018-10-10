@@ -1,0 +1,6 @@
+﻿  Building Custom Rule H:/CSCE441L1/CMakeLists.txt
+  CMake does not need to re-run because H:/CSCE441/build/CMakeFiles/generate.stamp is up-to-date.
+  Image.cpp
+  main.cpp
+  Generating Code...
+  L01.vcxproj -> H:\CSCE441\build\Release\L01.exe

@@ -1,0 +1,1483 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "helvet" "default"
+\font_typewriter "courier" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.5cm
+\topmargin 2.5cm
+\rightmargin 2.5cm
+\bottommargin 2.5cm
+\headheight 0cm
+\headsep 0cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+The Programming Assignment Report Instructions
+\begin_inset Newline newline
+\end_inset
+
+CSCE 221
+\end_layout
+
+\begin_layout Enumerate
+The description of an assignment problem.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The purpose of this assignment was to implement and create a DAG (directed
+ acyclic graph) using a edge, vertex and graph class and a file of inputs.
+ The program is to output the graph data structure and the correct order
+ of numbers when performing a depth first search on the input file.
+ The DAG was to be implemented using a combination of vectors, linked lists
+ and multiple classes.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+The description of data structures and algorithms used to solve the problem.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Provide definitions of data structures by using Abstract Data Types (ADTs)
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Edge Class
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Edge()//Holds values of a start, end, and weight for each edge.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Vertex Class
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Vertex()//Holds a value for the label of the vertex.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void connectTo()//connects a vertex to another vertex in the graph
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Graph Class
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Graph()//Holds a value of the file that the graph is being constructed from
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void buildGraph()//Builds a DAG constructed from the file held in the Graph
+ class constructor
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void displayGraph()//Outputs the DAG constructed from the buildGraph() function
+ to the console.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Other Functions
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void DFS()//Takes in a graph and uses topological ordering to order the
+ vertices in the DAG using the depth first search method.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Write about the ADTs implementation in C++.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Edge Class
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Edge()//Sets the constructor for the edge class to accept three integers
+ for the start, end and weight of each edge.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Vertex Class
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Vertex()//Sets the constructor for the vertex class to accept one integer
+ for the label of the vertex.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void connectTo()//Creates a new edge with the vertex calling the function
+ as the beginning of the edge and the integer value set in the function
+ definition as the vertex for the end of the edge.
+ The edges are unweighted so a value of 0 is given for the weights.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Graph Class
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Graph()//Sets the constructor for the graph class to hold the ifstream for
+ the file that the DAG will be based off of.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void buildGraph()//The function begins by uisng getline to count the number
+ of lines in the file, which contains how many vertices will be in the DAG,
+ the function then contstructs a vector of vertices containing the given
+ labels by the linecounter.
+ The program then uses a combination of nested while loops, istringstream
+ and getline to parse the file and use the connectTo() function to connect
+ the corresponding vertex to all the vertices that are listed in the same
+ row until the row is terminated by a -1.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void displayGraph()//Uses a for loop to parse through the edgeList of each
+ vertex, popping off the first element of each edgeList and separating the
+ values with an arrow.
+ When an edgeList is empty, the next vertex is output to the console until
+ all vertex's edgeLists are empty.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Other Functions
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void DFS()//The function begins by setting all of the timestamps of each
+ vertex to -1 using a for loop.
+ The first vertex is then accessed using a while loop and the closest vertex
+ it is set with an edge to is then set as the new vertex.
+ With each change of vertex the beginning time stamp is set for the vertex.
+ When the first while loop comes into contact with a vertex that contains
+ to edges to point to or a vertex who's sole edge's time stamp has already
+ been marked, the first while loop is broken and the second while loop begins.
+ In this loop, the vertices are treversed backward in order to set the second
+ timestamp for each vertex.
+ When a finish time stamp is set, the data structure is sorted through using
+ nested for loops to find the highest vertex that contains an instance where
+ the previous vertex was set as the end of an edge.
+ If the begin time stamp has yet to be set for a specific vertex, that timestamp
+ is set before the finish timestamp and the vertex must find another vertex
+ that does not have a begin timestamp or else the finish timestamp will
+ be the begin time plus one.
+ When both begin and finish timestamps are not -1, the vertex is pushed
+ into the front of a linked list containing the integer values for all the
+ vertices.
+ This process is repeated in a while loop until the inital vertex is reached.
+ Finally, the linked list is displayed on the console if the number of digits
+ in the list are equivalent to the number of vertices, otherwise a message
+ is displayed to the user that no topological order was found.
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Describe algorithms used to solve the problem.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The algorithms in this assignment were implemented using for and while loops.
+ For more information read part 2b on the corresponding function.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Analyze the algorithms according to assignment requirements.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void connectTo()//$O(1)$-no loops in the function
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void buildGraph()//$O(n^2)$-contains nested while loop
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void displayGraph()//$O(n^2)$-contains a while loop nested within a for
+ loop.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void DFS()//$O(n^3)$-contains a nested for loop nested within a while loop.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+A C++ organization and implementation of the problem solution 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Provide a list and description of classes or interfaces used by a program
+ such as classes used to implement the data structures or exceptions.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The program used a series of vectors that contained integers and linked
+ lists.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Vectors-The vector of vertices was used to hold the correpsonding vertex's
+ information as well as all the edges that the vertex pointed to contained
+ within a linked list.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Linked List-an STD linked list was used to hold the Edges of each vertex.
+ The list had the standard operations of a linked list and contained the
+ start and end of each edge in the corresponding vertex.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Include in the report the class declarations from a header file (.h) and
+ their implementation from a source file (.cpp).
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+On top of including the STD vector class and the Graph, Vertex and Edge
+ .cpp files, sstream and fstream were included as well.
+ sstream was used to parse each row of the input file whereas fstream allowed
+ for ifstream to be used and getline to parse through each row of the file.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Provide features of the C++ programming paradigms like Inheritance or Polymorphi
+sm in case of object oriented programming, or Templates in the case of generic
+ programming used in your implementation.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+This assignment focused on the paradigms of polymorphism and encapsulation.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Polymorphism-The assignment would have not been possible if it were not
+ for the capabilities of the vector and list class.
+ The STD vector and list held values for of the vertex class and edge class
+ type.
+ The ability that the vector class can adapt to the variable type put into
+ it allows for polymorphism to be seen in the assignment.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Encapuslation-The assignment used pointers to the next and previous nodes
+ that were private within the DListNode class.
+ This allowed for that data not to be changed using an outside class, inevitably
+ skewing the pointers.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+A user guide description how to navigate your program with the instructions
+ how to: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+compile the program: specify the directory and file names, etc.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Compile the program in the Kaiser-Alexander-A6 using the command make.
+ Make sure the input.data file and the graph, vertex, edge and main header
+ and .cpp files are in the same directory as well.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+run the program: specify the name of an executable file.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Run the program after compiling the file using the method above using the
+ command ./main input.data.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Specifications and description of input and output formats and files 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+The type of files: keyboard, text files, etc (if applicable).
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The program inputs a file in given in the same directory as the program
+ that contains muliple numbers per row ending with a -1 to terminate the
+ line.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+A file input format: when a program requires a sequence of input items,
+ specify the number of items per line or a line termination.
+ Provide a sample of a required input format.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The program uses getline and istringstream in order to parse throughout
+ the files.
+ There are mulitple items per line and getline terminates when it runs out
+ of rows to parse through and istringstream terminates when it runs into
+ a -1.
+ The input format is as follows.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+./main input.data
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Type the name of the file in the console after ./main to use the file for
+ the DAG
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Discuss possible cases when your program could crash because of incorrect
+ input (a wrong file name, strings instead of a number, or such cases when
+ the program expects 10 items to read and it finds only 9.)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The only time that the file could crash would involve a misplacement of
+ files in the directory.
+ If the file that is contained within the variable "file" is not in the
+ same directory as the program, the program will not run and an error will
+ be thrown.
+ Also, if the file given does not correctly implement a DAG, then the program
+ will not function correctly.
+ All other cases of crashing are accounted for with exceptions.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Provide types of exceptions and their purpose in your program.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+logical exceptions (such as deletion of an item from an empty container,
+ etc.).
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In order to eliminate logical exceptions in the program, if statements are
+ used to ensure that the data is being handled responsibly.
+ For example, if the user forgot to add a file name to the end of ./main,
+ "No File!" will be output and the program will exit.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+runtime exception (such as division by 
+\begin_inset Formula $0$
+\end_inset
+
+, etc.)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+To prevent runtime exception, a try-catch loop was implemented in the main
+ function.
+ When a runtime exception is encountered (such as a segmentation fault)
+ the program is terminated completely and a reason is given as to why the
+ termination occurred.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Test your program for correctness using valid, invalid, and random inputs
+ (e.g., insertion of an item at the beginning, at the end, or at a random
+ place into a sorted vector).
+ Include evidence of your testing, such as an output file or screen shots
+ with an input and the corresponding output.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The following shows test trials for a random, linear and perfect input of
+ 2^4
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted1.png
+	width 6.5in
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted2.png
+	width 6.5in
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted3.png
+	width 6.5in
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The following shows the output for a file that does not exist.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted4.png
+	width 6.5in
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Additional Questions.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+1.Describe the node structure utilized in the implementation of your skip
+ list
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,26 @@
+HOW TO DO TESTING?
+(Note: we assume that you implement different functions in different files)
+
+1. mkSet
+   After load your own .hs file, you need append test files with command
+   ":a TestHelper.hs TestMkSet.hs"
+
+2. subset
+   After load your own .hs file, you need append test files with command
+   ":a TestSubset.hs"
+
+3. setEqual
+   After load your own .hs file, you need append test files with command
+   ":a TestSetEqual.hs"
+
+4. setProd
+   After load your own .hs file, you need append test files with command
+   ":a TestHelper.hs TestSetProd.hs"
+
+5. partitionSet
+   After load your own .hs file, you need append test files with command
+   ":a TestHelper.hs TestPartitionSet.hs"
+
+6. bellNum
+   After load your own .hs file, you need append test files with command
+   ":a TestBellNum.hs"

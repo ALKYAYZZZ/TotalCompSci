@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MatchMemeing</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="./styles.css">
+		<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+	</head>
+
+<body>
+	<!-- Navbar (sit on top) -->
+	<div class="w3-top">
+	  <div class="w3-bar w3-white w3-card" id="myNavbar">
+		<a href="#home" class="w3-bar-item w3-button w3-wide">LOGO</a>
+		<!-- Right-sided navbar links -->
+		<div class="w3-right w3-hide-small">
+		  <a href="#home" class="w3-bar-item w3-button">Home</a>
+		  <a href="#memes" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Memes</a>
+		  <a href="#developers" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Developers</a>
+			<button id="loginButton" class="w3-bar-item w3-button" onclick="document.getElementById('UserAuthentication').style.display='block'">
+					Log In/Sign Up
+			</button>
+			<button id="logoutButton" class="w3-bar-item w3-button"> Logout </button>
+		</div>
+		<!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+		<a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+		  <i class="fa fa-bars"></i>
+		</a>
+	  </div>
+	</div>
+
+	<!-- Sidebar on small screens when clicking the menu icon -->
+	<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+	  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+	  <a href="#home" onclick="w3_close()" class="w3-bar-item w3-button">Home</a>
+	  <a href="#memes" onclick="w3_close()" class="w3-bar-item w3-button">Memes</a>
+	  <a href="#developers" onclick="w3_close()" class="w3-bar-item w3-button">Developers</a>
+	</nav>
+
+	<!-- Sign in window pops up when Login/Sign Up button is pressed on top bar -->
+	<div id="UserAuthentication" class="modal">
+			<span onclick="document.getElementById('userAuthentication').style.display='none'"
+				class="close" title="Close Modal">&times;</span>
+		<form class="modal-content animate" action="/action_page.php">
+			<div class="container">
+				<input id="txtEmail" type="email" placeholder="Email" style="display: block">
+				<input id="txtPassword" type="password" placeholder="Password" style="display: block">
+				<button id="btnLogin" class="btn btn-action">
+					Log In
+				</button>
+				<button id="btnSignUp" class="btn btn-secondary">
+					Sign Up
+				</button>
+			</div>
+				<div class="container" style="background-color:#f1f1f1">
+						<button type="button"
+							onclick="document.getElementById('UserAuthentication').style.display='none'"
+							class="cancelbtn">Cancel</button>
+						<span class="psw">Forgot <a href="#">password?</a></span>
+				</div>
+		</form>
+	</div>
+
+	<!-- Firebase code -->
+	<script type="text/javascript" src="firebaseScript.js"></script>
+
+	<!-- Header with full-height image -->
+	<header class="bgimg-1 w3-display-container" id="home">
+	  <div class="w3-display-left w3-text-black" style="padding:48px">
+	  </div>
+	</header>
+
+	<!-- Memes Section -->
+	<div class="meme_section" id="memes"><br><br>
+	  <h3 class="w3-center">Memes</h3>
+	  <p class="w3-center w3-large">Personalized Meme Matching</p>
+		<div class="gifBox" >
+			<span id = "giphyme"></span>
+		</div>
+
+		<br>
+
+		<center>
+		<form id="frm1" onsubmit = "#memes">
+		Meme word: <input type="text" name="fname" id = "memeWord" placeholder = "Fun"><br>
+		<input type="button" value="Submit" id="myButton">
+		</form>
+		</center>
+
+	</div>
+
+	<!-- Developers Section -->
+	<div class="w3-container" style="padding:128px 16px" id="developers">
+	  <h3 class="w3-center">The MatchMemeing Team</h3>
+	  <p class="w3-center w3-large">Developer Information</p>
+	  <div class="w3-row-padding w3-grayscale" style="margin-top:64px;">
+		<div class="w3-col l3 m6 w3-margin-bottom">
+		  <div class="w3-card">
+			<div class="w3-container">
+			  <h3>Zac Sanford</h3>
+			  <p class="w3-opacity">Firebase Developer and Web Developer</p>
+			  <p>Styling, overall webpage development, and implemented Firebase support, allowing user registration and login.</p>
+			  <p><a href="mailto: zsanford@tamu.edu"><button class="w3-button w3-light-grey w3-block"><i class="zacsEmailBtn"></i>Contact</button></a></p>
+				<script type="text/javascript">
+				</script>
+			</div>
+		  </div>
+		</div>
+		<div class="w3-col l3 m6 w3-margin-bottom align: 'center'">
+		  <div class="w3-card">
+			<div class="w3-container">
+			  <h3>Chase Hinesman</h3>
+			  <p class="w3-opacity">Giphy Developer and Web Developer</p>
+			  <p>Styling, overall webpage development, and implemented Imgur support.</p>
+			  <p><a href="mailto: c.hinesman@tamu.edu"><button class="w3-button w3-light-grey w3-block"><i class="chaseEmailBtn"></i>Contact</button></a></p>
+			</div>
+		  </div>
+		</div>
+		<div class="w3-col l3 m6 w3-margin-bottom">
+		  <div class="w3-card">
+			<div class="w3-container">
+			  <h3>Alex Keiser</h3>
+			  <p class="w3-opacity">Giphy Support and Web Developer</p>
+			  <p>Styling, overall webpage development, and implemented Giphy support.</p>
+			  <p><a href="mailto: alkyayzzz@tamu.edu"><button class="w3-button w3-light-grey w3-block"><i class="alexsEmailBtn"></i> Contact</button></a></p>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+	<!-- Promo Section "Statistics" -->
+	<div class="w3-container w3-row w3-center w3-dark-grey w3-padding-64" id="promo">
+	  <div class="w3-quarter">
+		<span class="w3-xxlarge">3</span>
+		<br>Members
+	  </div>
+	  <div class="w3-quarter">
+		<span class="w3-xxlarge">1</span>
+		<br>Goal
+	  </div>
+	  <div class="w3-quarter">
+		<span class="w3-xxlarge">Unlimited</span>
+		<br>Memes
+	  </div>
+	  <div class="w3-quarter">
+		<span class="w3-xxlarge">Stay Entertained</span>
+		<br>Be Happy
+	  </div>
+	</div>
+
+	<!-- Footer -->
+	<footer class="w3-center w3-black w3-padding-64">
+	  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+	  <div class="w3-xlarge w3-section">
+		<a href = "https://www.facebook.com/sharer.php?u=https://matchmemeing.com"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+		<a href = "https://www.instagram.com"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+		<a href = "https://www.snapchat.com"><i class="fa fa-snapchat w3-hover-opacity"></i></a>
+		<a href = "https://pinterest.com"><i class="fa fa-pinterest-p w3-hover-opacity"></i></a>
+		<a href = "https://twitter.com/share?url=https://matchmemeing.com&amp"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+		<a href = "https://www.linkedin.com/shareArticle?mini=true&amp;url=https://matchmemeing.com"><i class="fa fa-linkedin w3-hover-opacity"></i>,</a>
+		</div>
+	  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+	</footer>
+
+	<script>
+	document.getElementById("myButton").addEventListener("click", function() {
+		var q = document.getElementById("memeWord").value; // search query
+		var type = Math.floor(Math.random() * 2);
+
+		if(type==1) {
+			//giphy
+			//alert('giphy')
+
+			var req = 'https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag='+q;
+			request = new XMLHttpRequest;
+			request.open('GET', req, true);
+
+			request.onload = function() {
+				if (request.status >= 200 && request.status < 400){
+					js=JSON.parse(request.responseText);
+					img = js.data.image_url;
+					title=js.data.caption;
+
+					console.log(img);
+					document.getElementById("giphyme").innerHTML = '<center><img src = "'+img+'" height=490px title="'+title+'"></center>';
+				} else {
+					console.log('reached giphy, but API returned an error');
+				}
+			};
+			request.onerror = function() {
+				console.log('connection error');
+			};
+			request.send();
+		} else {
+			//imgur
+
+			//alert('imgur');
+			var page = Math.floor(Math.random() * 3) + 1;
+			var req = 'https://api.imgur.com/3/gallery/search/top/all/'+page+'?q='+q;
+
+			var reply,data;
+			request = new XMLHttpRequest;
+			request.open('GET', req, true);
+			request.setRequestHeader('authorization','Client-ID 2a43bbcf1a05643');
+
+			request.onload = function() {
+				if (request.status >= 200 && request.status < 400){
+					//alert("in")
+
+					var data,img;
+
+					var js = JSON.parse(request.responseText);
+					var lst= js.data;
+
+					if(lst.length == 0) {
+						document.getElementById("giphyme").innerHTML = '<center>Please Try Again</center>';
+						//alert('query '+q+' page '+page);
+					}
+					else {
+						//alert(JSON.stringify(lst[0]));
+						js = lst[Math.floor(Math.random() * lst.length) + 1];
+
+						if(js.is_album) data = js.images[0];
+						else data = js;
+
+						img=data.link;
+						//alert(img);
+					}
+					console.log(data);
+					document.getElementById("giphyme").innerHTML = '<center><img src = "'+img+'" height=490px title="'+js.title+'"></center>';
+				} else {
+					document.getElementById("giphyme").innerHTML = 'error';
+					console.log('reached imgur, but API returned an error');
+				}
+			};
+			request.onerror = function() {
+				console.log('connection error');
+			};
+			request.send();
+
+		}
+	});
+	</script>
+
+</body>
+</html>

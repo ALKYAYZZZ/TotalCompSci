@@ -1,0 +1,9 @@
+﻿  main.cpp
+H:\CSCE441L11\src\main.cpp(66): warning C4305: 'argument': truncation from 'double' to 'float'
+H:\CSCE441L11\src\main.cpp(107): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+H:\CSCE441L11\src\main.cpp(108): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+H:\CSCE441L11\src\main.cpp(120): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+H:\CSCE441L11\src\main.cpp(121): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+H:\CSCE441L11\src\main.cpp(244): warning C4018: '<': signed/unsigned mismatch
+  L11.vcxproj -> H:\CSCE441L11\build\Debug\L11.exe
+  L11.vcxproj -> H:/CSCE441L11/build/Debug/L11.pdb (Full PDB)

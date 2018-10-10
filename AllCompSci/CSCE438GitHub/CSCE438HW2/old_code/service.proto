@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package socialnetwork;
+
+service SocialNetwork{
+    rpc sendCommand (Commands) returns (CommandReply) {}
+    rpc connectUser(Person) returns(CommandReply) {}
+    rpc timelineMode(Update) returns(Update) {}
+}
+
+message Person{
+      string name = 1;
+      repeated string followers = 2;
+      repeated string following = 3;
+      repeated Update timeline = 4;
+}
+
+message Update{
+      string person = 1;
+      string time = 2;
+      string update = 3;
+}
+
+message Commands{
+      string cmd = 1;
+      string args = 2;
+      enum Choices{
+            UNKNOWN = 0;
+            FOLLOW = 1;
+            UNFOLLOW = 2;
+            LIST = 3;
+            TIMELINE = 4;
+      }
+      Choices cmd_choice = 3;
+      string person = 4;
+}
+
+message CommandReply{
+      string arg = 1;
+      enum ReturnVal{
+            UNKNOWN = 0;
+            SUCCESS = 1;
+            FAILURE_ALREADY_EXISTS = 2;
+            FAILURE_NOT_EXISTS = 3;
+            FAILURE_INVALID_USERNAME = 4;
+            FAILURE_INVALID = 5;
+            FAILURE_UNKNOWN = 6;
+      }
+      ReturnVal return_val = 2;
+}
+
+message connectUser{
+      string cmd = 1;
+
+}

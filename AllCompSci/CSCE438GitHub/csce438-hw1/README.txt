@@ -1,0 +1,3 @@
+-Compile code using command make
+-Run server first with command ./server
+-Run multiple clients with commands ./client

@@ -1,0 +1,11 @@
+Archive.zip
+mp5.zip
+_build/
+.vscode/
+
+.~lock.*
+*.url
+
+*.o
+client
+server

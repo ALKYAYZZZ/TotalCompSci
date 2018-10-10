@@ -1,0 +1,4 @@
+﻿  main.cpp
+H:\CSCE441L7\src\main.cpp(233): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+  L07.vcxproj -> H:\CSCE441L7\build\Debug\L07.exe
+  L07.vcxproj -> H:/CSCE441L7/build/Debug/L07.pdb (Full PDB)

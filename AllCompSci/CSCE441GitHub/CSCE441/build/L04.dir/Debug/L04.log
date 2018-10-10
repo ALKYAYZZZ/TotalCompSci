@@ -1,0 +1,7 @@
+﻿  main.cpp
+H:\CSCE441L4\src\main.cpp(264): warning C4305: 'argument': truncation from 'double' to 'float'
+H:\CSCE441L4\src\main.cpp(265): warning C4305: 'argument': truncation from 'double' to 'float'
+H:\CSCE441L4\src\main.cpp(283): warning C4305: 'argument': truncation from 'double' to 'float'
+H:\CSCE441L4\src\main.cpp(290): warning C4305: 'argument': truncation from 'double' to 'float'
+  L04.vcxproj -> H:\CSCE441\build\Debug\L04.exe
+  L04.vcxproj -> H:/CSCE441/build/Debug/L04.pdb (Full PDB)

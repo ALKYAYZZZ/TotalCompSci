@@ -1,0 +1,2278 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "helvet" "default"
+\font_typewriter "courier" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.5cm
+\topmargin 2.5cm
+\rightmargin 2.5cm
+\bottommargin 2.5cm
+\headheight 0cm
+\headsep 0cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+The Programming Assignment Report Instructions
+\begin_inset Newline newline
+\end_inset
+
+CSCE 221
+\end_layout
+
+\begin_layout Enumerate
+The description of an assignment problem.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The purpose of this assignment was to implement an ADT Skip List that could
+ accept values up to $2^{12}$ in a perfect and random manner.
+ The average insertion cost and deletion cost was to be calculated and for
+ all files and the skip list was to be printed as well as the comparison
+ cost for each insertion and deletion was to be displayed for all files
+ smaller than or equal to $2^4$.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+The description of data structures and algorithms used to solve the problem.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Provide definitions of data structures by using Abstract Data Types (ADTs)
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void newLevel//Adds a new level to the skip list.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void insertFirstRow//Adds a number to the bottom row of the skip list.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void insertTopRow//Adds a number to one of the top rows of the skip list.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int insertComparisons//Finds number of comparisons for each insert operation.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int find//Finds the node within the skiplist and returns the comparisons
+ for deletion.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+bool searchRows//Checks to see if the number is in the doubly linked list.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int deleteRows//Deletes the number from the skiplist one by one whne the
+ number is plugged into the function.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DListNode Class
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int getElem//Returns the number the node contains.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DListNode*getNext//Returns what the next object the node is pointing to.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DListNode*getPrev//Returns what the previous object the node is pointing
+ to.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DListNode*insert
+\backslash
+_before//Inserts a new node before the node the function is being called
+ with.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DListNode*insert
+\backslash
+_after//Inserts a new node after  the node the function is being called
+ with.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void delete
+\backslash
+_before//Deletes a node before the node the function is being called with.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void delete
+\backslash
+_after//Deletes a node after the node the function is being called with.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DoublyLinkedList Class
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DListNode*getFirst//Returns the node that is in front of the header of the
+ doubly linked list.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DListNode*getAfterLast//Returns the trailer of the doubly linked list.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+bool isEmpty//Checks to see if the doubly linked list is empty.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int first//Returns the number of the node after the header.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int last//Returns the number of hte node before the trailer.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void insertFirst//Inserts a node after the header and before the first node.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void insertLast//Inserts a node before the trailer and after the last node.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int removeFirst//Removes the node after the header.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int removeLast//Removes the node before the trailer.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Write about the ADTs implementation in C++.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void newLevel//Creates a new doubly linked list and adds the "key" to the
+ first position of the doubly linked list using the function insertFirst,
+ then pushes the doubly linked list onto the vector of doubly linked list.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void insertFirstRow//Sorts where the the number should go within the first
+ row of the doubly linked list using a while statement to parse through
+ the doubly linked list.
+ The node is then inserted using the insert
+\backslash
+_before function.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void insertTopRow//Uses a random function to simulate a coin flip and if
+ it lands heads (1) then another node is added on top of the first row of
+ the skip list.
+ If the max size of the height of the skip list is exceeded then the newLevel
+ function is called and another doubly linked list is pushed onto the main
+ vector.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int insertComparisons//Uses skip list ADT to parse through each section
+ of the vector and when the number is smaller than the "key" and when it
+ reaches a number that is greater than the key it drops down the the vector
+ position (next row down of skip list) until the correct position is reached.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int find//Parses though the skip list starting at the largest position in
+ the vector at negative infinity and drops down when the next element is
+ larger than the "key" using the getNext function.
+ When the key is reached the loop is broken and the comaprisons are returned.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+bool searchRows//Parses thorough the doubly linked list in the function
+ definition using a while loop and returns a boolean value corresponding
+ whether or not any of the nodes contain the "key".
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int deleteRows//Parses through each element of the vector and deletes every
+ instance of the "key".
+ If the row becomes empty then the doubly linked list is deleted and the
+ vector position is deleted.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DListNode Class
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int getElem//Returns object contained within the node using a return statement.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DListNode*getNext//Returns a pointer to the next node that is in the doubly
+ linked list.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DListNode*getPrev//Returns a pointer to the previous node that is in the
+ doubly linked list.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DListNode*insert
+\backslash
+_before//Inserts a new node with a corresponding "key" before the node that
+ is pointing to the function.
+ The next and previous pointers are rewired to include the new node.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DListNode*insert
+\backslash
+_after//Inserts a new node with a corresponding "key" after the node that
+ is pointing to the function.
+ The next and previous pointers are rewired to include the new node.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void delete
+\backslash
+_before//Deletes a node with a before the node that is pointing to the function.
+ The next and previous pointers are rewired to include the new node.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void delete
+\backslash
+_after//Deletes a node with a after the node that is pointing to the function.
+ The next and previous pointers are rewired to include the new node.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DoublyLinkedList Class
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DListNode*getFirst//Returns a pointer to the first node in the list that
+ is ahead of the header.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DListNode*getAfterLast//Returns a pointer to the trailer of the doubly linked
+ list.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+bool isEmpty//Checks to see if the header and trailer are the only two items
+ in the list pointing to one another and returns a boolean value.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int first//Returns the object that the first node is pointing to after the
+ header.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int last//Returns the object that the last node is pointing to before the
+ trailer.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void insertFirst//Inserts a new node with a corresponding "key" after the
+ header.
+ The next and previous pointers of the previous node in that location and
+ the header are rewired to include the new node.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void insertLast//Inserts a new node with a corresponding "key" before the
+ trailer.
+ The next and previous pointers of the previous node in that location and
+ the trailer are rewired to include the new node.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int removeFirst//Deletes a node after the header.
+ The next and previous pointers of the previous node in that location and
+ the header are rewired to include the lack of a new node.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int removeLast//Deletes a node before the trailer.
+ The next and previous pointers of the previous node in that location and
+ the trailer are rewired to include the lack of a new node.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Describe algorithms used to solve the problem.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+There are five main algorithms in the assignment, the comparison cost of
+ insertion, the comparison cost of search, the comparison cost of deletion
+ and the average cost of insertion and deletion.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Cost of Insertion-a series of while loops parse each level of the doubly
+ linked list vector adding a comparison each time the iterator moves right
+ or drops down.
+ When the iterator hits an number greater than the "key" on the bottom row
+ the number of comparisons is returned.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Cost of Deletion-a series of while loops parse each level of the doubly
+ linked list vector adding a comparison each time the iterator moves right
+ or drops down.
+ When the iterator hits the key, the function terminates regardless of the
+ level the skip list is on.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Cost of Search-a series of while loops parse each level of the doubly linked
+ list vector adding a comparison each time the iterator moves right or drops
+ down.
+ When the iterator hits the key, the function terminates regardless of the
+ level the skip list is on.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Average of Insersion and Deletion-every time a number of comparisons is
+ made, the number is added to a vector in a location correspoding the the
+ number the program is attempting to find.
+ The vector is then totaled up and divided by the total number of elements
+ in the vector to find the averages.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Analyze the algorithms according to assignment requirements.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Cost of Insertion-using the insertComparisons function, each level of the
+ doubly linked list vector is parsed until the node comes into contact with
+ a node that is greater than the key needing to be inserted.
+ Every time the node moves right one is added to the variable of comparisons.
+ When a node greater than the key is come into contact, the number that
+ the node stops on is saved in the variable elementholder and the vector
+ space one below the previous vector space is parsed until it reaches the
+ value of elementholder.
+ When dropping down a level in the skip list another comparison is added
+ as well.
+ This process is repeated until the node tries to drop down beyond the last
+ level.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Cost of Deletion-the concept is the same as the cost of insertion except
+ rather than going to the very bottom of the skip list to finish with comparison
+s, the function terminates and the comparisons are returned when the while
+ loop returns a node that contains the key the function is looking for.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Cost of Search-the concept is the same as the cost of insertion except rather
+ than going to the very bottom of the skip list to finish with comparisons,
+ the function terminates and the comparisons are returned when the while
+ loop returns a node that contains the key the function is looking for.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Average of Insertion and Deletion-these figures take all of the values of
+ comparisons for insertion and deletion and averages them to display them
+ at the end.
+ This is done very simply using for loops.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+A C++ organization and implementation of the problem solution 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Provide a list and description of classes or interfaces used by a program
+ such as classes used to implement the data structures or exceptions.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The program used a series of vectors that contained integers and doubly
+ linked lists.
+ The doubly linked list contained nodes that held integers.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Vectors-The vector of doubly linked lists was contained each row of the
+ skip list where a row contained one doubly linked list.
+ Standard integer vectors contained the values of the numbers that were
+ input, the number of comparisons of deletion and the number of comparisons
+ of insertion.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Doubly Linked List-Each row of the skip list contained a doubly linked list
+ with a header of negative infinity and a trailer of positive infinity.
+ Each node of the doubly linked list contained the integers of the skip
+ list.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Include in the report the class declarations from a header file (.h) and
+ their implementation from a source file (.cpp).
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+On top of including the STD vector class and the "DoublyLinkedList.cpp" file,
+ ctime and limits were included as well.
+ Ctime was used to propagate the random values for the coin flips and limits
+ was used to implement the header and trailer of the doubly linked lists
+ as positive and negative infinity.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Provide features of the C++ programming paradigms like Inheritance or Polymorphi
+sm in case of object oriented programming, or Templates in the case of generic
+ programming used in your implementation.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+This assignment focused on the paradigms of polymorphism and encapsulation.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Polymorphism-The assignment would have not been possible if it were not
+ for the capabilities of the vector class.
+ The two forms of the STD vector was one that held doubly linked lists and
+ one that held integers.
+ The ability that the vector class can adapt to the variable type put into
+ it.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Encapuslation-The assignment used pointers to the next and previous nodes
+ that were private within the DListNode class.
+ This allowed for that data not to be changed using an outside class, inevitably
+ skewing the pointers.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+A user guide description how to navigate your program with the instructions
+ how to: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+compile the program: specify the directory and file names, etc.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Compile the program in the Kaiser-Alexander-A5 using the command g++ SkipList2.cp
+p.
+ Make sure the number files, DoublyLinkedList.cpp and DoublyLinkedList.h files
+ are in the same directory as well.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+run the program: specify the name of an executable file.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Run the program after compiling the file using the method above using the
+ command ./a.out.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Specifications and description of input and output formats and files 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+The type of files: keyboard, text files, etc (if applicable).
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The program inputs a file in given in the same directory as the program
+ that contains numbers from $2^1$ to $2^{12}$ in a perfect, random and linear
+ manner and parses them in order in to the skip list.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+A file input format: when a program requires a sequence of input items,
+ specify the number of items per line or a line termination.
+ Provide a sample of a required input format.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The program uses getline in order to parse throught the files.
+ There is one item per line and getline terminates when it runs out of integers
+ to parse through.
+ The input format is as follows.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+string file = "4r";
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Place the name of the file within the quotation marks that the user would
+ like to parse through.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Discuss possible cases when your program could crash because of incorrect
+ input (a wrong file name, strings instead of a number, or such cases when
+ the program expects 10 items to read and it finds only 9.)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The only time that the file could crash would involve a misplacement of
+ files in the directory.
+ If the file that is contained within the variable "file" is not in the
+ same directory as the program, the program will not run and an error will
+ be thrown.
+ All other cases of crashing are accounted for with exceptions.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Provide types of exceptions and their purpose in your program.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+logical exceptions (such as deletion of an item from an empty container,
+ etc.).
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In order to eliminate logical exceptions in the program, if statements are
+ used to ensure that the data is being handled responsibly.
+ For example, if the file that is listed is not within the same directory
+ as a program, "No file" will be output and the program will exit.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+runtime exception (such as division by 
+\begin_inset Formula $0$
+\end_inset
+
+, etc.)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+To prevent runtime exception, a try-catch loop was implemented in the main
+ function.
+ When a runtime exception is encountered (such as a segmentation fault)
+ the program is terminated completely and a reason is given as to why the
+ termination occurred.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Test your program for correctness using valid, invalid, and random inputs
+ (e.g., insertion of an item at the beginning, at the end, or at a random
+ place into a sorted vector).
+ Include evidence of your testing, such as an output file or screen shots
+ with an input and the corresponding output.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The following shows test trials for a random, linear and perfect input of
+ 2^4
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted1.png
+	width 6.5in
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted2.png
+	width 6.5in
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted3.png
+	width 6.5in
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The following shows the output for a file that does not exist.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted4.png
+	width 6.5in
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Additional Questions.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+1.Describe the node structure utilized in the implementation of your skip
+ list
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The node structure used in this implementation of a skip list is the doubly
+ linked list from assignment three part 1.
+ It was an easy structure to use with the skip list to insert and delete
+ nodes of integers.
+ The header and trailer was a useful addition to hold the negative and positive
+ infinities of the skip list as well.
+ The code of the doubly linked list was modified to be able to insert nodes
+ anywhere within the doubly linked list using the functions insert
+\backslash
+_before, insert
+\backslash
+_after, delete
+\backslash
+_before and delete
+\backslash
+_after.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+2.Describe the overall data structure of your skip list
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The skip list was made using a vector of doubly linked lists where each
+ row of the skip list corresponded to a separate doubly linked list.
+ The higher the element of the vector, the farther away from the bottom
+ row the skip list grew.
+ The doubly linked list allowed the nodes to point to the previous and next
+ nodes that surrounded it that allowed for easy traversal of the rows.
+ The "coin flips" were accomplished by using a random function that returned
+ a 1 or 0 value.
+ If the value was 1 then the coin flip was output as heads.
+ The data was sorted using an algorithm of while loops.
+ A list of all functions used in the implementation of the skip list are
+ contained in item 2 of this report.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+3.Explain how the nodes are used in the structure of your skip list
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Each node in the doubly linked list corresponds to a number in the skip
+ list.
+ The function getElem returned the object that the node pointed to in order
+ to extract the numbers to make the skip list.
+ The header and trailer of the doubly linked lists were used to hold the
+ values of negative and positive infinity.
+ Each node pointed to the node before and in front of it and the doubly
+ linked lists were stacked on top of one another using the vector of linked
+ lists.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+4.Describe how levels of your skip list are traversed (up and down)
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The traversal of the skip list was accomplished using a series of while
+ loops.
+ The parsing started at the top left corner and the doubly linked list was
+ parsed until it came accross a node that contained a number that is greater
+ than or equal to the  "key" that was being looked for.
+ If the number is equal to the key the while loop is broken out of and the
+ function stops, however if the number is greater than the key, the last
+ number parsed is held in a variable and the next row of the skip list (the
+ doubly linked list in the element location one below the original element
+ location) is parsed up until this variable.
+ This is essentially a "drop down" to the next row of the skip list and
+ the process is repeated until the key is found or until the function tries
+ to drop down below the bottom row of the skip list.
+ When inserting, the coin flip operation checks to see if a new row needs
+ to be made, and makes one if need be by pushing a new doubly linked list
+ onto the main vector.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+5.A description of how you implemented the calculation of (a) insert cost
+ (b) search cost (c) delete cost, and worst case and average case theoretical
+ runtimes (Big O) for the insert, search, and delete functions
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+See item two parts c and d for the answer to this question.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+For all three operations, the average case is $O(logn)$ and the worse case
+ is $O(n)$.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+6.Run your program several times with the same set of data.
+ Is the number of comparisons for the search operation the same each time?
+ Why or why not? Provide justification.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The number of comparisons is not the same each time because the height of
+ the skip list is randomized by the coin flips.
+ Since a skip list is a randomized data structure, then the number of comparison
+s cannot be held constant for numerous trials.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+7.How likely is it that an item will be inserted into the nth level of the
+ skip list?
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The liklihood that an item will be inserted into the nth level is $1/2^i$
+ which means that the expected size of the skip list is $n/2^i$ or $O(n)$.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+8.How does height affect the number of comparisons for the skip list operations?
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The higher the skip list, the greater the number of comparisons for the
+ numbers on the lower rows.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+9.Does the order of the data (sorted, reverse sorted, random) affect the
+ number of comparisons? How?
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+No it does not, since the data's height is randomized the idea of skip pointers
+ is introduced.
+ This allows for comparisons to be skipped depending on the height of the
+ skip list.
+ If the data was to be compared using a vector, the input of the data would
+ play a large role in the number of comparisons per trial.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+10.How does the runtime compare to a Binary Search Tree for the insert, search,
+ and delete operations?
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+A binary tree's operations are $O(logn)$ for the average and $O(n)$ for
+ the worst for all operations, so they are essentially the same.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+11.In what cases might a Binary Search Tree be more efficient than a skiplist?
+ In what cases might it be less efficient?
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+A binary search tree is less efficient when working with concurrent access/modif
+ication due to the fact it has to be rebalanced often.
+ It is more efficient in any circumstance where the tree does not have to
+ be rebalanced.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

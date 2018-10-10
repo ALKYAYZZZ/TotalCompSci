@@ -1,0 +1,5 @@
+Test 0, w = 1:
+Test 1, w = 5:
+Test 2, w = 10:
+Test 3, w = 15:
+Test 4, w = 20:

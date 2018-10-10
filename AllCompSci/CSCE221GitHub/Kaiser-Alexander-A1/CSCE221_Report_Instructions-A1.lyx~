@@ -1,0 +1,1040 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "helvet" "default"
+\font_typewriter "courier" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.5cm
+\topmargin 2.5cm
+\rightmargin 2.5cm
+\bottommargin 2.5cm
+\headheight 0cm
+\headsep 0cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+The Programming Assignment Report Instructions
+\begin_inset Newline newline
+\end_inset
+
+CSCE 221
+\end_layout
+
+\begin_layout Enumerate
+The description of an assignment problem
+\end_layout
+
+\begin_layout Standard
+The goal of this programming assignment was to create a vector class that
+ used arrays, pointers and other funtions to allow for the insertion, deletion
+ and replace capabilities that come with the STL vector class to create
+ a dynamic 
+\begin_inset Quotes eld
+\end_inset
+
+array
+\begin_inset Quotes erd
+\end_inset
+
+ for characters and integers.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+The description of data structures and algorithms used to solve the problem.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Provide definitions of data structures by using Abstract Data Types (ADTs)
+ 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+class My_vec{
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+//member variables
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+int size, 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+capacity; 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+char* ptr; 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+public: 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+//member functions
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+My_vec();//creates a new My_vec class
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+~My_vec();//destructs the my vec class
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+My_vec(const My_vec& vec); //allows for a vector of vectors to be created
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+My_vec& operator=(const My_vec& vec); //allows for the copying of two vectors
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+int get_size() const;//returns number of elements currently within the vector
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+int get_capacity() const; //returns current capacity of vector (preportional
+ to how much memory is allocated)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+char& operator[](int i) const; //returns variable at element location in
+ vector
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+char& operator[](int i);//returns variable at element location in vector
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+bool is_empty() const; //checks to see if vector is empty
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+char& elem_at_rank(int r) const; //returns element at specific location
+ in vector
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+void insert_at_rank(int r, const char& elem); //inserts element at specific
+ location in vector
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+void replace_at_rank(int r, const char& elem); //replaces element at specific
+ location in vector
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+void remove_at_rank(int r); //removes element at specific location in vector
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+}; 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+ostream& operator<<(ostream& out, const My_vec& vec); //displays all elements
+ of vector
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+int find_max_index(const My_vec& v,int size); //finds the index of the biggest
+ element in vector and returns it 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+void sort_max(My_vec& vec); //sorts the vector from biggest to smallest
+ elements or smallest to biggest for generic
+\end_layout
+
+\begin_layout Standard
+For the generic vector all the instances of 
+\begin_inset Quotes eld
+\end_inset
+
+char
+\begin_inset Quotes erd
+\end_inset
+
+ are replaced with template 
+\begin_inset Quotes eld
+\end_inset
+
+T
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Write about the ADTs implementation in C++class
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+class My_vec{
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+//member variables
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+int size, 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+capacity; 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+char* ptr; 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+public: 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+//member functions
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+My_vec();//initializes the size, capacity and vector to be used in the My_vec
+ class
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+~My_vec();//dealloates memory that is not being used depending upon the
+ size of elements in the vector
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+My_vec(const My_vec& vec); //accepts a reference to a vector to be placed
+ in a slot in another vector
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+My_vec& operator=(const My_vec& vec); //overloads the assignment operator
+ to accept a reference to a second vector and sets all of the elements in
+ the second
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size tiny
+vector equal to the elements in the first vector using a for loop
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+
+\size tiny
+int get_size() const;//accepts a reference to a vector and returns the number
+ of elements currently in the vector (what size is equal to)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+int get_capacity() const; //accepts a reference to a vector and returns
+ the number of spaces available in the vector (what capacity is equal to)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+char& operator[](int i) const; //overloads the [] operator to return a pointer
+ to the reference of an element in a specific space in a vector
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+char& operator[](int i);//overloads the [] operator to return a pointer
+ to the reference of an element in a specific space in a vector
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+bool is_empty() const; //returns a boolean value regarding whether the size
+ of the vector is zero or not
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+char& elem_at_rank(int r) const; //accepts a reference to a vector as well
+ as an integer to return a pointer to the spot in the referenced vector
+ that the 
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size tiny
+element refers to
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+
+\size tiny
+void insert_at_rank(int r, const char& elem); //accepts a reference to a
+ vector, a reference to a character and an integer to change the element
+ in the
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size tiny
+location referenced by the integer to the character that was placed in the
+ function.
+ The size is increased by one and the elements in the spaces above the inserted
+ character are moved up by one spot
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+
+\size tiny
+void replace_at_rank(int r, const char& elem); //accepts a reference to
+ a vector, a reference to a character and an integer to change the element
+ in the location 
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size tiny
+referenced by the integer to the character that was placed in the function
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+
+\size tiny
+void remove_at_rank(int r); //accepts a reference to a vector and an integer
+ to remove the character located in the position referred to by the integer
+ and 
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size tiny
+decreases the total size by one
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+
+\size tiny
+}; 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+ostream& operator<<(ostream& out, const My_vec& vec); //overloads the <<
+ operator and uses a reference to a vector and a for loop to display all
+ the elements in all 
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size tiny
+slots of the vector containing an element
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+
+\size tiny
+int find_max_index(const My_vec& v,int size); //accepts a reference to a
+ vector and an integer for the size of the vector to use a for loop to go
+ through the size 
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size tiny
+of the vector.
+ The location for the character with the highest ascii value is stored and
+ returned
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+
+\size tiny
+void sort_max(My_vec& vec); //accepts a reference to a vector and uses the
+ replace_at_rank and find_max_index functions to swap the elements of the
+ vector
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size tiny
+until the vector is sorted from highest to lowest, or lowest to highest
+ for generic.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+For the generic vector all the instances of 
+\begin_inset Quotes eld
+\end_inset
+
+char
+\begin_inset Quotes erd
+\end_inset
+
+ are replaced with template 
+\begin_inset Quotes eld
+\end_inset
+
+T
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Describe algorithms used to solve the problem.
+\end_layout
+
+\begin_layout Standard
+There are three main algorithms used in this program to accomplish the problem
+\end_layout
+
+\begin_layout LyX-Code
+for (int i = size - 1; i >= r ;i--)
+\end_layout
+
+\begin_layout LyX-Code
+ptr[i+1]=ptr[i]; 
+\end_layout
+
+\begin_layout LyX-Code
+ptr[r] = elem;
+\end_layout
+
+\begin_layout LyX-Code
+if (ptr[r] != '
+\backslash
+0') 
+\end_layout
+
+\begin_layout LyX-Code
+size++;
+\end_layout
+
+\begin_layout Quote
+The above algorithm is used in the insert_at_rank function to move up all
+ the elements with a higher index than the element being inserted.
+ 
+\end_layout
+
+\begin_layout LyX-Code
+for (int i = v.get_size()- size;
+\end_layout
+
+\begin_layout LyX-Code
+i <= v.get_capacity(); i++)
+\end_layout
+
+\begin_layout LyX-Code
+{
+\end_layout
+
+\begin_layout LyX-Code
+if (v[i] > letter)
+\end_layout
+
+\begin_layout LyX-Code
+{
+\end_layout
+
+\begin_layout LyX-Code
+letter = int(v[i]);
+\end_layout
+
+\begin_layout LyX-Code
+location = i; 
+\end_layout
+
+\begin_layout LyX-Code
+}
+\end_layout
+
+\begin_layout LyX-Code
+}
+\end_layout
+
+\begin_layout Standard
+The above algorithm is used in the find_max_index function to sort through
+ the given vector and hold the location of the highest letter or number
+ it passes in the for loop.
+\end_layout
+
+\begin_layout LyX-Code
+for (int i = 0; i <= vec.get_size() - 1; i++){
+\end_layout
+
+\begin_layout LyX-Code
+int max = find_max_index(vec, vec.get_size()-i); 
+\end_layout
+
+\begin_layout LyX-Code
+char k = vec[max]; 
+\end_layout
+
+\begin_layout LyX-Code
+vec.replace_at_rank(max,vec[i]); 
+\end_layout
+
+\begin_layout LyX-Code
+vec.replace_at_rank(i,k); 
+\end_layout
+
+\begin_layout LyX-Code
+}
+\end_layout
+
+\begin_layout Standard
+The above algorithm is used in the sort_max_index function to swap elements
+ with the highest index until the final vector is sorted from highest to
+ lowest.
+\end_layout
+
+\begin_layout Itemize
+Analyze the algorithms according to assignment requirements.
+ 
+\end_layout
+
+\begin_layout Standard
+The first algorithm will be used anytime that an element is being inserted
+ in a space lower than the size of the vector.
+ If it is the first element being added to a vector or being added to the
+ end of a vector, the funciton will not have to iterate the for loop.
+ The second algorithm will iterate the most if the vector is ordered from
+ lowest to highest.
+ The if statement will return as true as many times as the size of the vector.
+ However if the vector is already ordered from highest to lowest the if
+ statement will only iterate once.
+ The third algorithm follows the same format as the second algorithm, however
+ it iterates the same amount of times with every call.
+ In the case that the vector is already sorted from highest to lowest, the
+ function will replace the element with itself regardless if it is the same
+ element.
+\begin_inset VSpace vfill
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+A C++ organization and implementation of the problem solution 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Provide a list and description of classes or interfaces used by a program
+ such as classes used to implement the data structures or exceptions.
+\end_layout
+
+\begin_layout Standard
+-My_vec-creates a dynamic vector of character objects using arrays and a
+ multitude of functions to manipulate the vector.
+\end_layout
+
+\begin_layout Standard
+-My_genvec-creates a dynamic vector of objects specified by the template
+ using arrays and a multitude of functions to manipulate the vector.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Include in the report the class declarations from a header file (.h) and
+ their implementation from a source file (.cpp).
+ 
+\end_layout
+
+\begin_layout Standard
+-For the original My_vec class, the class and class functions are declared
+ in the .h file and constructed in the .cpp file, however for the generic
+ My_vec the class is defined and constructed in the .h file since templates
+ eliminate the ability to use multiple files.
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Provide features of the C++ programming paradigms like Inheritance or Polymorphi
+sm in case of object oriented programming, or Templates in the case of generic
+ programming used in your implementation.
+ 
+\end_layout
+
+\begin_layout Standard
+In the instance of object-oriented programming the paradigms of inheritance,
+ encapsulation and polymorphism are seen in the program of My_vec.
+ Encapsulation is seen by the private members of the My_vec class including
+ the size, capacity and ptr variables.
+ This act of data hiding is important so the user does not have the capability
+ to change these variables without using the public functions of My_vec.
+ Furthermore, inheritance is used in the My_vec.cpp file in the find_max_index,
+ sort_max and << operator overload functions.
+ They inherit an instance of the My_vec class to return a seperate value
+ in the main function.
+ Finally, polymorphism is used in the implementation of the My_vec class
+ by having the ability to take a pointer to two seperate vectors containing
+ different element types and be able to change them with the same function.
+ In generic programming, templates were very useful when greating the My_genvec
+ class.
+ Rather than making a different class for each variable type, only one class
+ needed to be made.
+ In order to change the varibable type the user simply needed to specify
+ the type in the vector angle brackets.
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+A user guide description how to navigate your program with the instructions
+ how to: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+compile the program: specify the directory and file names, etc.
+\end_layout
+
+\begin_layout Standard
+The directory is Kaiser-Alexander-A1
+\end_layout
+
+\begin_layout Standard
+The file names for the original My_vec are: My_vec.h, My_vec.cpp, main.cpp
+ and makefile; compile with command make
+\end_layout
+
+\begin_layout Standard
+The file names for the generic My_vec are: My_genvec.h genmain.cpp, and genmakefil
+e.mak; compile with command make -f genmakefile.mak
+\begin_inset VSpace vfill
+\end_inset
+
+—run the program: specify the name of an executable file.
+\end_layout
+
+\begin_layout Standard
+To run the original My_vec use command ./main
+\end_layout
+
+\begin_layout Standard
+To run the generic My_vec use command ./genmain
+\begin_inset VSpace vfill
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Specifications and description of input and output formats and files 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The type of files: keyboard, text files, etc (if applicable).
+\end_layout
+
+\begin_layout Standard
+The program requires that data is written/changed in the main function of
+ each .cpp file in order to change the output of the program.
+ The output of the program comes from running the main file after compiling
+ in g++ in an SSH client.
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+A file input format: when a program requires a sequence of input items,
+ specify the number of items per line or a line termination.
+ Provide a sample of a required input format.
+ 
+\end_layout
+
+\begin_layout Standard
+The program requires for user input to transform the main function before
+ compliling.
+ Thus, input should be made within the functions in the main function.
+ Each function should take up one line increase readability of the code.
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Discuss possible cases when your program could crash because of incorrect
+ input (a wrong file name, strings instead of a number, or such cases when
+ the program expects 10 items to read and it finds only 9.)
+\end_layout
+
+\begin_layout Standard
+The program knows to throw an exception when attempting to insert or remove
+ an item with an index greater than the size of the vector.
+ Furthermore, if the user attempts to insert a variable that is different
+ than the type specified in the template the program will simply refuse
+ to complile.
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Provide types of exceptions and their purpose in your program.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+logical exceptions (such as deletion of an item from an empty container,
+ etc.).
+\end_layout
+
+\begin_layout Standard
+In order to prevent against logical exceptions, a series of if statements
+ are implemented within the code to terminate the program in the event that
+ it occurs.
+ An example includes the insert_at_rank function.
+ The if statement that is placed at the beginning of the code terminates
+ the program when attempting to insert an element into a space that contains
+ an empty character.
+ A second example includes the remove_at_rank function.
+ If the user attempts to remove an element that contains an empty character
+ (doesn't exist) then the size of the vector is not changed.
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+runtime exception (such as division by 
+\begin_inset Formula $0$
+\end_inset
+
+, etc.)
+\end_layout
+
+\begin_layout Standard
+The prevention of runtime exceptions comes from the try-catch statements
+ in the main function.
+ When a runtime exception is encountered (such as a segmentation fault)
+ the program is terminated completely and a reason is given as to why the
+ termination occurred.
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Test your program for correctness using valid, invalid, and random inputs
+ (e.g., insertion of an item at the beginning, at the end, or at a random
+ place into a sorted vector).
+ Include evidence of your testing, such as an output file or screen shots
+ with an input and the corresponding output.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted1.png
+	width 6in
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The original My_vec class is displayed above.
+ When attempting to place an element in a location that does not yet exist
+ an error is thrown and the user is prompted with the error.
+ The instructions given in the main were followed showing the input of correct,
+ incorrect and random values.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted5.png
+	width 6in
+
+\end_inset
+
+
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted6.png
+	width 6in
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted7.png
+	width 6in
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted8.png
+	width 6in
+
+\end_inset
+
+
+\begin_inset VSpace defskip
+\end_inset
+
+The three screen clippings taken above show the My_genvec class at work.
+ The same instructions given in the main.cpp were followed and exceptions
+ were thrown if there was an incorrect input.
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

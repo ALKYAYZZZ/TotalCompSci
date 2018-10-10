@@ -1,0 +1,14 @@
+﻿  main.cpp
+H:\CSCE441L12\src\main.cpp(56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+H:\CSCE441L12\src\main.cpp(70): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+H:\CSCE441L12\src\main.cpp(71): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+H:\CSCE441L12\src\main.cpp(72): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+H:\CSCE441L12\src\main.cpp(188): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+H:\CSCE441L12\src\main.cpp(192): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+H:\CSCE441L12\src\main.cpp(193): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+H:\CSCE441L12\src\main.cpp(194): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+H:\CSCE441L12\src\main.cpp(195): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+H:\CSCE441L12\src\main.cpp(196): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+H:\CSCE441L12\src\main.cpp(197): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  L12.vcxproj -> H:\CSCE441L12\build\Debug\L12.exe
+  L12.vcxproj -> H:/CSCE441L12/build/Debug/L12.pdb (Full PDB)

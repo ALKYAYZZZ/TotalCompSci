@@ -1,0 +1,8 @@
+﻿  main.cpp
+H:\CSCE441L10\src\main.cpp(85): warning C4305: '+=': truncation from 'double' to 'float'
+H:\CSCE441L10\src\main.cpp(88): warning C4305: '-=': truncation from 'double' to 'float'
+H:\CSCE441L10\src\main.cpp(91): warning C4305: '+=': truncation from 'double' to 'float'
+H:\CSCE441L10\src\main.cpp(94): warning C4305: '-=': truncation from 'double' to 'float'
+H:\CSCE441L10\src\main.cpp(207): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+  L10.vcxproj -> H:\CSCE441L10\build\Debug\L10.exe
+  L10.vcxproj -> H:/CSCE441L10/build/Debug/L10.pdb (Full PDB)

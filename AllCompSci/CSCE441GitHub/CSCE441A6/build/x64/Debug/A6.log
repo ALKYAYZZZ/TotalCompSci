@@ -1,0 +1,3 @@
+﻿  ShapeSkin.cpp
+H:\CSCE441A6\src\ShapeSkin.cpp(187): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+  Compiler terminating.  Please wait........... Abort complete.

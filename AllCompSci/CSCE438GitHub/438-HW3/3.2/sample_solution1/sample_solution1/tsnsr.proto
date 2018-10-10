@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package tsnsr;
+
+service snsRoute {
+    rpc AddMaster(Message) returns (Response) {}
+    rpc GetAvailable(Message) returns (Response) {}
+    rpc DualPing(stream Message) returns (stream Message) {}
+}
+
+message Message {
+    string text = 1;
+}
+
+message Response {
+    enum Result {
+        SUCCESS = 0;
+        FAILURE = 1;
+    }
+    Result result = 1;
+    string msg = 2;
+}

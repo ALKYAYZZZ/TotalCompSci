@@ -1,0 +1,9 @@
+H:/CSCE441L16/build/CMakeFiles/INSTALL.dir
+H:/CSCE441L16/build/CMakeFiles/L16.dir
+H:/CSCE441L16/build/CMakeFiles/ALL_BUILD.dir
+H:/CSCE441L16/build/CMakeFiles/ZERO_CHECK.dir
+C:/C++/glfw-3.2.1/debug/CMakeFiles/uninstall.dir
+C:/C++/glfw-3.2.1/debug/CMakeFiles/INSTALL.dir
+C:/C++/glfw-3.2.1/debug/CMakeFiles/ALL_BUILD.dir
+C:/C++/glfw-3.2.1/debug/src/CMakeFiles/glfw.dir
+C:/C++/glfw-3.2.1/debug/src/CMakeFiles/INSTALL.dir

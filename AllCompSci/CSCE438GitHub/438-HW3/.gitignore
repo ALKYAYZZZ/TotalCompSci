@@ -1,0 +1,13 @@
+.DS_Store
+*/.DS_Store
+*/*/.DS_Store
+*/*/*/.DS_Store
+*.out
+*.o
+*.swp
+tsd
+tsc
+*.pb.*
+*.grpc.*
+*.json
+server_data/

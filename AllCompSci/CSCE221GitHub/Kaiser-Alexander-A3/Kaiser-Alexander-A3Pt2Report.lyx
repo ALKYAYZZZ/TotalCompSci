@@ -1,0 +1,1655 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "helvet" "default"
+\font_typewriter "courier" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.5cm
+\topmargin 2.5cm
+\rightmargin 2.5cm
+\bottommargin 2.5cm
+\headheight 0cm
+\headsep 0cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+The Programming Assignment Report Instructions
+\begin_inset Newline newline
+\end_inset
+
+CSCE 221
+\end_layout
+
+\begin_layout Enumerate
+The description of an assignment problem.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The goal of this assignment was to use linked lists, vectors, nodes and
+ regex to extract and hold the name, email address and course of an html
+ file of peer teachers and display them in an organized manner to the user
+ in its entirety and by course number.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+The description of data structures and algorithms used to solve the problem.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Provide definitions of data structures by using Abstract Data Types (ADTs)
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$struct Node 
+\backslash
+{$//Node Struct
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$string name, address, course;$//Initialization of pointers to strings to
+ hold name,address and course number.
+\backslash
+
+\backslash
+		
+\end_layout
+
+\begin_layout Plain Layout
+
+$Node()
+\backslash
+{name = ""; address = ""; course = "";
+\backslash
+}$//Constructor for strings of Node Class
+\backslash
+
+\backslash
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+};$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$std::vector<std::list<Node>> a;$//Initializes "a", a vector of a list of
+ Nodes.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$smatch name, address, course;$//Initializes three arrays for regex
+\backslash
+_search of name, address and course number.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$std::vector<string> namevec, addressvec, coursevec;$//Initializes vector
+ of strings for name, address and course number.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$std::vector<int> linecounter;$//Initializes vector of integers to count
+ the lines of the .html file.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$std::list<Node> r;$//Initializes new list of nodes.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$Node n;$//Initializes new Node
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$n.name = namevec[i];$//Sets name object of Node to element at i in vector
+ of names.
+\backslash
+
+\backslash
+ 			
+\end_layout
+
+\begin_layout Plain Layout
+
+$n.address = addressvec[i];$//Sets address object of Node to element at i
+ in vector of addresses.
+\backslash
+
+\backslash
+			
+\end_layout
+
+\begin_layout Plain Layout
+
+$n.course = coursevec[j];$//Sets course object of Node to element at i in
+ vector of objects.
+\backslash
+
+\backslash
+			
+\end_layout
+
+\begin_layout Plain Layout
+
+$r.push
+\backslash
+_back(n);$//Places node in the last position of a list of nodes, "r".
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$regex pattern1 ("
+\backslash
+backslash
+\backslash
+backslash w+
+\backslash
+backslash
+\backslash
+backslash s
+\backslash
+backslash
+\backslash
+backslash w+(-)?
+\backslash
+backslash
+\backslash
+backslash w*(?=</h3>)");$//Initalizes a regex pattern for the names of peer
+ teachers.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$if(regex_search(line,name,pattern1))$//Uses regex
+\backslash
+_search function to return a boolean value corresponding to the regex pattern
+ and holds the match in smatch "name".
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$std::vector<std::list<string>> s;$//Initializes a vector of a list of strings.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$std::list<string> list121,list111,list110,list221,list206,list313,list312,list3
+15;$//Initializes 8 lists of strings.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$s.push
+\backslash
+_back(list110);$//Pushes back list of 110 peer teachers into vector s.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$list<string> x =  s.at(i);$//Initializes list of strings to vector "s" at
+ i.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$cout << "Name: " << x.back() << "
+\backslash
+backslash n";$//Prints the value at the back of list x.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$x.pop
+\backslash
+_back();$//Deletes last element of list x.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Write about the ADTs implementation in C++.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$struct Node 
+\backslash
+{$//Initialization of new Struct with name Node
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$string name, address, course;$//Allocates memory for string variables to
+ hold name, address and course number info in Node struct.
+\backslash
+
+\backslash
+		
+\end_layout
+
+\begin_layout Plain Layout
+
+$Node()
+\backslash
+{name = ""; address = ""; course = "";
+\backslash
+}$//Initializes the string variables to "NULL" equivalent using empty strings
+ to prevent compilation error.
+\backslash
+
+\backslash
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+};$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$std::vector<std::list<Node>> a;$//Allocates memory for a STD vector of
+ an STD list of Nodes in variable "a".
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$smatch name, address, course;$//Allocates memeory for three arrays for
+ regex
+\backslash
+_search with variables names name, address and course to hold corresponding
+ information.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$std::vector<string> namevec, addressvec, coursevec;$//Allocates memory
+ for a STD vector of strings to hold the name, course and address info when
+ regex
+\backslash
+_search returns a bool value of true.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$std::vector<int> linecounter;$//Allocates memory for a STD vector of integers
+ to count lines in between course numbers to tell if the peer teacher helps
+ with more than one course.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$std::list<Node> r;$//Allocates memory for a new list of nodes in variable
+ "r".
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$Node n;$//Allocates memory for a new Node, "n".
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$n.name = namevec[i];$//The object in the name variable of the node struct
+ is set to the element at "i" in the vector "namevec".
+\backslash
+
+\backslash
+ 			
+\end_layout
+
+\begin_layout Plain Layout
+
+$n.address = addressvec[i];$//The object in the address variable of the node
+ struct is set to the element at "i" in the vector "address".
+\backslash
+
+\backslash
+			
+\end_layout
+
+\begin_layout Plain Layout
+
+$n.course = coursevec[j];$//The object in the name variable of the node struct
+ is set to the element at "i" in the vector "namevec".
+\backslash
+
+\backslash
+			
+\end_layout
+
+\begin_layout Plain Layout
+
+$r.push
+\backslash
+_back(n);$//Uses STD vector push
+\backslash
+_back operation to place the node "n" at the end of list "r".
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$regex pattern1 ("
+\backslash
+backslash
+\backslash
+backslash w+
+\backslash
+backslash
+\backslash
+backslash s
+\backslash
+backslash
+\backslash
+backslash w+(-)?
+\backslash
+backslash
+\backslash
+backslash w*(?=</h3>)");$//The regex pattern scans through the line of the
+ html document to see if any characters follow the formula of letters, a
+ single white space, letters, an optional hyphen, letters and if it ends
+ in a </h3>.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$if(regex_search(line,name,pattern1))$//The STD regex
+\backslash
+_search function is used to scan through the line of html code and returns
+ true if the pattern matches the regex pattern listed in the function parameters.
+ If the bool value is true the the characters matching the pattern are stored
+ in an smatch array "name".
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$std::vector<std::list<string>> s;$//Allocates memory for a STD vector of
+ an STD list of strings in a variable "s".
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$std::list<string> list121,list111,list110,list221,list206,list313,list312,list3
+15;$//Allocates memory for an STD list of strings in the variables listed.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$s.push
+\backslash
+_back(list110);$//Use of the STD vector push
+\backslash
+_back function to place a list of strings at the end of the vector of lists
+ of strings, "s".
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$list<string> x =  s.at(i);$//Allocates memory for a list of strings with
+ a variable "x" of the list of strings in the vector "s" at location "i".
+ This line uses the STD vector function at() to extract the object at the
+ location of "i" in the vector "s".
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$cout << "Name: " << x.back() << "
+\backslash
+backslash n";$//The cout function is used in pairing with the STD list function
+ back() to display the last element of the list "x" on the console.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$x.pop
+\backslash
+_back();$//The STD list function pop
+\backslash
+_back is used to deallocate the memory of the last element of the list "x",
+ thus deleting the element.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Describe algorithms used to solve the problem.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The algorithms in this assignment are centered around regex and STD vectors
+ and lists.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Regex has a function called regex
+\backslash
+_search to find character literals that follow a given pattern within a
+ string and place it in an array if matched.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+STD vectors and lists are able to hold values of multiple types in a sequence
+ with the ability to add or remove values from the sequence.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Analyze the algorithms according to assignment requirements.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The regex functions are used to search for a specific pattern pertaining
+ to the name, address or course number for each line within the html file,
+ if found it places the pertaining value in a node.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The vectors were used to hold the data of the lists within each, and the
+ lists held the data of the nodes within each element.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+A C++ organization and implementation of the problem solution 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Provide a list and description of classes or interfaces used by a program
+ such as classes used to implement the data structures or exceptions.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Struct Node: Holds three string values pertaining to the name, address and
+ course of a peer teacher.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+STD vector: Standard vector used for holding Nodes, Lists, Strings, Integers
+ and combinations of those listed.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+STD list: Standard vector used for holding Nodes and Strings.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Include in the report the class declarations from a header file (.h) and
+ their implementation from a source file (.cpp).
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The file does not use any .h files rather than the standard template directory.
+ A .h file was not needed since the Node struct was relatively simple, containing
+ only three string variables.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Provide features of the C++ programming paradigms like Inheritance or Polymorphi
+sm in case of object oriented programming, or Templates in the case of generic
+ programming used in your implementation.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Templates-The program is heavily dependent upon templating.
+ The STD list and vector are used in multiple occurances to hold different
+ types of variables.
+ For example, the first half of the assignment focused on creating a vector
+ of lists of nodes to hold the information of each peer teacher according
+ to their name and course number.
+ The second focused on creating a vector of lists of strings to hold the
+ names of the peer teachers for each course.
+ Without templating each vector and list would have to be constructed and
+ initialized with all types of variables that could be used individually.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Polymorphism-Since vectors and lists are able to hold different forms of
+ data, it is inferred that polymorphism is applicable to the code since
+ the vector and list classes morph to the data type the vector or list is
+ initialized with.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+A user guide description how to navigate your program with the instructions
+ how to: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+compile the program: specify the directory and file names, etc.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Begin by changing the directory to Kaiser-Alexander-A3 using the cd keyword
+ in putty.
+ When inside the directory, complile using g++ by typing into the console
+ "g++ Kaiser-Alexander-A3Pt2.cpp".
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+run the program: specify the name of an executable file.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+After compilation, simply use ./a.out to run the program in the console.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Specifications and description of input and output formats and files 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+The type of files: keyboard, text files, etc (if applicable).
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The program requires that the Peer-TeacherHTMLONLY.html file is in the same
+ directory as the .cpp file or else an error will be thrown.
+ The program will output onto the console when run.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+A file input format: when a program requires a sequence of input items,
+ specify the number of items per line or a line termination.
+ Provide a sample of a required input format.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The only input required is the .html file listed above and the user to compile
+ and run the program.
+ No other user input is required.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Discuss possible cases when your program could crash because of incorrect
+ input (a wrong file name, strings instead of a number, or such cases when
+ the program expects 10 items to read and it finds only 9.)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The program will crash if the PeerTeacherHTMLONLY.html file is not in the
+ same directory as the .cpp program or if the exact file name is not listed
+ in the ifstream.
+ If the user were to change any of the values of the for loops or regex
+ patterns, the program would likely produce a segmenation fault and crash
+ due to the fact that the amount of items that the program is designed to
+ iterate wouled be changed.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Provide types of exceptions and their purpose in your program.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+logical exceptions (such as deletion of an item from an empty container,
+ etc.).
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Logical exceptions are prevented using if statements.
+ For example, if there is no file in the ifstream or if the file is not
+ in the correct directory, the program is terminated and "No file" is output
+ onto the console.
+ In order to prevent working with an empty list or vector, if statements
+ are used in the program to check to see if the list or vector is empty.
+ This prevents attempting to manipulate a nonexistent variable.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+runtime exception (such as division by 
+\begin_inset Formula $0$
+\end_inset
+
+, etc.)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+To prevent runtime exception, a try-catch loop was implemented in the main
+ function.
+ When a runtime exception is encountered (such as a segmentation fault)
+ the program is terminated completely and a reason is given as to why the
+ termination occurred.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Test your program for correctness using valid, invalid, and random inputs
+ (e.g., insertion of an item at the beginning, at the end, or at a random
+ place into a sorted vector).
+ Include evidence of your testing, such as an output file or screen shots
+ with an input and the corresponding output.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The assignment does provide capability of assigning random values, thus
+ there is no screenshot for random inputs.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The screenshots below show proper output of the program.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted4.png
+	width 6in
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted6.png
+	width 6in
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The screenshot below shows the output when there is not a file in the ifstream.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted3.png
+	width 6in
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The screenshot below shows what happens when a course is not listed for
+ a peer teacher.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted5.png
+	width 6in
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

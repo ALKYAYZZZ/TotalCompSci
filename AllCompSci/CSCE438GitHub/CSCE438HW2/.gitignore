@@ -1,0 +1,8 @@
+*.o
+*.out
+tsd
+tsc
+*.pb.*
+*.grpc.*
+server_data/
+.DS_Store

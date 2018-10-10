@@ -1,0 +1,5 @@
+﻿  Building Custom Rule H:/CSCE441A5/CMakeLists.txt
+  CMake does not need to re-run because H:/CSCE441A5/build/CMakeFiles/generate.stamp is up-to-date.
+  main.cpp
+  A5.vcxproj -> H:\CSCE441A5\build\Debug\A5.exe
+  A5.vcxproj -> H:/CSCE441A5/build/Debug/A5.pdb (Full PDB)

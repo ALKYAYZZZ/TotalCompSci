@@ -1,0 +1,5 @@
+﻿  main.cpp
+H:\CSCE441L5\src\main.cpp(78): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+H:\CSCE441L5\src\main.cpp(79): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  L05.vcxproj -> H:\CSCE441L5\build\Debug\L05.exe
+  L05.vcxproj -> H:/CSCE441L5/build/Debug/L05.pdb (Full PDB)
