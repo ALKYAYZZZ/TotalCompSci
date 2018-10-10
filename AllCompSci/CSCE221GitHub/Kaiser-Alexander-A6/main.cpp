@@ -137,12 +137,7 @@ try{
 	string filename = argv[1];
 	Graph p = Graph(filename);
 	p.buildGraph();
-	if(filename == "inputdemo1.txt")
-		cout << "DFS: 325146";
-	else if(filename == "inputdemo2.txt")
-		cout << "No topological ordering.";
-	cout << endl;
-	//DFS(p,0);
+	DFS(p,0);
 	p.displayGraph();
 
     return 0;
