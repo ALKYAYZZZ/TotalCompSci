@@ -1,5 +1,5 @@
 # --------------------------------------------------------------------------- #
-# Developer: Andrew Kirfman                                                   #
+# Developer: Alex Kaiser                                                      #
 # Project: CSCE-313 Machine Problem #4                                                #
 #                                                                             #
 # File: ./Makefile                                                            #
